@@ -123,5 +123,37 @@ Una vez que se lanza un error este es el primer método que se llama, el cual re
 #### componentDidCatch()
 Este método es llamado después de lanzarse un error y pasa como argumento el error y la información representada sobre el error.
 
+## State - Events
+"React nos permite responder a las interacciones de los usuarios con propiedades como onClick, onChange, onKeyPress, onFocus, onScroll, entre otras.
+Estas propiedades reciben el nombre de la función que ejecuta el código que responde a las interacciones de los usuarios. Seguramente, esta función usará la función this.setState para actualizar el estado de nuestro componente.
+
+`class Button extends React.Component {`
+  `state = { count: 0 }`
+
+  `handleClick = () => (`
+     `this.setState({ count: this.state.count + 1 })`
+  `);`
+
+  `render() {`
+    `const { count } = this.state;`
+    `return (`
+      `<div>`
+        `<h1>Manzanas: {count}</h1>`
+        `<button onClick{this.handleClick}>Sumar</button>`
+      `</div>`
+    `);`
+  `}`
+`}`
+
+## Instalación y configuración de entorno
+Iniciar repositorio en GIT:
+    `git init`
+
+Iniciar un proyecto de Node.js:
+    `npm init -y`
+
+Instalar React:
+    `npm install --save react react-dom`
+
 
 
