@@ -155,5 +155,19 @@ Iniciar un proyecto de Node.js:
 Instalar React:
     `npm install --save react react-dom`
 
+### Agregando compatibilidad con todos los navegadores usando Babel
+Babel es una herramienta muy popular para escribir JavaScript moderno y transformarlo en código que pueda entender cualquier navegador.
+
+Instalación de Babel y otras herramientas para que funcione con React:
+`npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader`
+
+Configuración de Babel (.babelrc):
+`{`
+  `""presets"": [`
+    `""@babel/preset-env"",`
+    `""@babel/preset-react""`
+  `],`
+`}`
+
 
 
