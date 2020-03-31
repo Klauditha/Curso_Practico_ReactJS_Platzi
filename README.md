@@ -273,3 +273,36 @@ https://gist.github.com/gndx/60ae8b1807263e3a55f790ed17c4c57a
 https://gist.github.com/gndx/747a8913d12e96ff8374e2125efde544
 
 
+## Añadiendo imágenes con Webpack
+File Loader para acceder a las imágenes de nuestro proyecto desde el código.
+
+Inicialmente, estos archivos estáticos se encuentran junto al código de desarrollo. Pero al momento de compilar, Webpack guardará las imágenes en una nueva carpeta junto al código para producción y actualizará nuestros componentes (o donde sea que usemos las imágenes) con los nuevos nombres y rutas de los archivos.
+
+Instalación de File Loader:
+`npm install --save-dev file-loader`
+
+Configuración de File Loader en Webpack (webpack.config.js):
+`rules: [`
+  `{`
+    `test: /\.(png|gif|jpg)$/,`
+    `use: [`
+      `{`
+        `loader: 'file-loader',`
+        `options: { name: 'assets/[hash].[ext]' },`
+      `}`
+    `],`
+  `},`
+`],`
+
+Uso de File Loader con React:
+`import React from 'react';`
+`import nombreDeLaImagen from '../assets/static/nombre-del-archivo';`
+
+`const Component = () => (`
+  `<img src={nombreDeLaImagen} />`
+`);`
+
+`export default Component;`
+
+
+

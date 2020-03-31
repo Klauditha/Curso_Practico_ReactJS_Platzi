@@ -1,4 +1,4 @@
-import Reac, {Component} from 'react'
+import Reac, {Component} from 'react';
 class Stareful extends Component {
     constructor(props){
         super(props);
