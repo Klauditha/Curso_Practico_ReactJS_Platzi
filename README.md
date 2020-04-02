@@ -4,9 +4,9 @@
 
 ### Inicializacion de un Proyecto en Reac
 
-npx create-react-app nombre-de-tu-proyecto , con plantilla por defecto
+`npx create-react-app nombre-de-tu-proyecto` , con plantilla por defecto
 
-npm start , Iniciar en el servidor de desarrollo.
+`npm start` , Iniciar en el servidor de desarrollo.
 
 ### Creación de Componentes
 * Deben comenzar con mayusculas (Pascal Case o Upper Camel Case)
@@ -15,35 +15,35 @@ npm start , Iniciar en el servidor de desarrollo.
 
 `import React, { Component } from 'react';`
 
-`class Stateful extends Component {`
-` constructor(props) {`
-    `super(props);`
-    `this.state = { hello: 'hello world' }; `
-  `}`
+`class Stateful extends Component {`    
+` constructor(props) {`   
+    `super(props);`   
+    `this.state = { hello: 'hello world' }; `   
+  `}`   
 
-  `render() {`
-   ` return (`
-      `<h1>{this.state.hello}h1>`
-    `);`
-  `}`
-`}`
+  `render() {`   
+   ` return (`   
+      `<h1>{this.state.hello}h1>`   
+    `);`   
+  `}`  
+`}`   
 
-`export default Stateful;'`
+`export default Stateful;'`   
 
 * Los componentes Statless o Presentacionales permiten crear funciones que devuelven codigo en formato JSX:
 
 `'import React from 'react';`
 
-`const Stateless = () => {`
-  `return (`
-    `<h1>¡Hola!</h1>`
-  `);`
-`}`
+`const Stateless = () => {`   
+  `return (`   
+    `<h1>¡Hola!</h1>`   
+  `);`   
+`}`   
 
 // Otra forma de crearlos:
-`const Stateless = () => <h1>¡Hola!h1>;`
+`const Stateless = () => <h1>¡Hola!h1>;`   
 
-`export default Stateless;'`
+`export default Stateless;'`   
 
 ## JSX: JavaScript + HTML
 React usa JSX: una sintaxis que nos permite escribir la estructura HTML y la lógica en JavaScript desde un mismo lugar.
@@ -51,27 +51,27 @@ React usa JSX: una sintaxis que nos permite escribir la estructura HTML y la ló
 ## Props: Comunicación entre ComponentesProps: Comunicación entre Componentes
 Las Props son la forma de enviar y recibir información en nuestros componentes. Son la forma de comunicar cada componente con el resto de la aplicación. Son muy parecidas a los parámetros y argumentos de las funciones en cualquier lenguaje de programación.
 
-`// Button.jsx`
-`import React from 'react';`
+`// Button.jsx`   
+`import React from 'react';`   
 
-`const Button = props => {`
-  `return (`
-    `<div>`
-      `<button type="button">{props.text}</button>`
-    `</div>`
-  `);`
-`};`
+`const Button = props => {`   
+  `return (`   
+    `<div>`   
+      `<button type="button">{props.text}</button>`   
+    `</div>`   
+  `);`   
+`};`   
 
-`export default Button;`
+`export default Button;`   
 
-`// index.jsx`
-`import React from 'react';`
-`import Button from './components/Button';`
+`// index.jsx`   
+`import React from 'react';`   
+`import Button from './components/Button';`   
 
-`ReactDOM.render(`
-  `<Button text="¡Hola!" />,`
-  `document.getElementByid('root'),`
-`);`
+`ReactDOM.render(`   
+  `<Button text="¡Hola!" />,`   
+  `document.getElementByid('root'),`   
+`);`   
 
 ## Metodos del ciclo de vida
 Todos los componentes en React pasan por una serie de fases que generalmente se denominan “Ciclo de Vida del componente” es un proceso que React hace en cada componente, en algunos casos no podemos verlos como un bloque de código y en otros podemos llamarlos en nuestro componente para asignar una actividad según sea el caso necesario.
@@ -127,23 +127,23 @@ Este método es llamado después de lanzarse un error y pasa como argumento el e
 "React nos permite responder a las interacciones de los usuarios con propiedades como onClick, onChange, onKeyPress, onFocus, onScroll, entre otras.
 Estas propiedades reciben el nombre de la función que ejecuta el código que responde a las interacciones de los usuarios. Seguramente, esta función usará la función this.setState para actualizar el estado de nuestro componente.
 
-`class Button extends React.Component {`
-  `state = { count: 0 }`
+`class Button extends React.Component {`   
+  `state = { count: 0 }`   
 
-  `handleClick = () => (`
-     `this.setState({ count: this.state.count + 1 })`
-  `);`
+  `handleClick = () => (`   
+     `this.setState({ count: this.state.count + 1 })`   
+  `);`   
 
-  `render() {`
-    `const { count } = this.state;`
-    `return (`
-      `<div>`
-        `<h1>Manzanas: {count}</h1>`
-        `<button onClick{this.handleClick}>Sumar</button>`
-      `</div>`
-    `);`
-  `}`
-`}`
+  `render() {`   
+    `const { count } = this.state;`   
+    `return (`   
+      `<div>`   
+        `<h1>Manzanas: {count}</h1>`   
+        `<button onClick{this.handleClick}>Sumar</button>`   
+      `</div>`   
+    `);`   
+  `}`   
+`}`   
 
 ## Instalación y configuración de entorno
 Iniciar repositorio en GIT:
@@ -162,12 +162,12 @@ Instalación de Babel y otras herramientas para que funcione con React:
 `npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader`
 
 Configuración de Babel (.babelrc):
-`{`
-  `""presets"": [`
-    `""@babel/preset-env"",`
-    `""@babel/preset-react""`
-  `],`
-`}`
+`{`   
+  `""presets"": [`   
+    `""@babel/preset-env"",`   
+    `""@babel/preset-react""`   
+  `],`   
+`}`   
 
 ### Webpack: Empaquetando nuestros módulos
 "Webpack es una herramienta que nos ayuda a compilar multiples archivos (JavaScript, HTML, CSS, imágenes) en uno solo (o a veces un poco más) que tendrá todo nuestro código listo para producción.
@@ -177,42 +177,42 @@ Instalación de Webpack y algunos plugins:
 
 Configuración de Webpack (webpack.config.js):
 
-`const path = require('path');`
-`const HtmlWebpackPlugin = require('html-webpack-plugin');`
+`const path = require('path');`   
+`const HtmlWebpackPlugin = require('html-webpack-plugin');`   
 
-`module.exports = {`
-  `entry: './src/index.js',`
-  `output: {`
-    `path: path.resolve(__dirname, 'dist'),`
-    `filename: 'bundle.js',`
-  `},`
-  `resolve: {`
-    `extensions: ['.js', '.jsx'],`
-  `},`
-  `module: {`
-    `rules: [`
-      `{`
-        `test: /\.(js|jsx)$/,`
-        `exclude: /node_modules/,`
-        `use: {`
-          `loader: 'babel-loader',`
-        `},`
-      `},`
-      `{`
-        `test: /\.html$/,`
-        `use: {`
-          `loader: 'html-loader',`
-        `},`
-      `},`
-    `],`
-  `},`
-  `plugins: [`
-    `new HtmlWebpackPlugin({`
-      `template: './public/index.html',`
-      `filename: './index.html',`
-    `}),`
-  `],`
-`};`
+`module.exports = {`   
+  `entry: './src/index.js',`   
+  `output: {`   
+    `path: path.resolve(__dirname, 'dist'),`   
+    `filename: 'bundle.js',`   
+  `},`   
+  `resolve: {`   
+    `extensions: ['.js', '.jsx'],`   
+  `},`   
+  `module: {`   
+    `rules: [`   
+      `{`   
+        `test: /\.(js|jsx)$/,`   
+        `exclude: /node_modules/,`   
+        `use: {`   
+          `loader: 'babel-loader',`   
+        `},`   
+      `},`   
+      `{`   
+        `test: /\.html$/,`   
+        `use: {`   
+          `loader: 'html-loader',`   
+        `},`   
+      `},`   
+    `],`   
+  `},`   
+  `plugins: [`   
+    `new HtmlWebpackPlugin({`   
+      `template: './public/index.html',`   
+      `filename: './index.html',`   
+    `}),`   
+  `],`   
+`};`   
 
 ## Webpack Dev Server: Reporte de errores y Cambios en tiempo real
 
@@ -220,12 +220,12 @@ Instalación de Webpack Dev Server:
     `npm install --save-dev webpack-dev-server`
 
 Script para ejecutar el servidor de Webpack y visualizar los cambios en tiempo real (package.json):
-`{`
-  `""scripts"": {`
-    `""build"": ""webpack --mode production"",`
-    `""start"": ""webpack-dev-server --open --mode development""`
-  `},`
-`}`
+`{`   
+  `""scripts"": {`   
+    `""build"": ""webpack --mode production"",`   
+    `""start"": ""webpack-dev-server --open --mode development""`   
+  `},`   
+`}`   
 
 ## Estilos con SASS
 os preprocesadores como Sass son herramientas que nos permiten escribir CSS con una sintaxis un poco diferente y más amigable que luego se transformará en CSS normal. Gracias a Sass podemos escribir CSS con variables, mixins, bucles, entre otras características.
@@ -234,30 +234,30 @@ Instalación de Sass:
 `npm install --save-dev mini-css-extract-plugin css-loader node-sass sass-loader`
 
 Configuración de Sass en Webpack (webpack.config.js):
-`const MiniCssExtractPlugin = require('mini-css-extract-plugin');`
+`const MiniCssExtractPlugin = require('mini-css-extract-plugin');`   
 
-`// ...`
+`// ...`   
 
-`module: {`
-  `rules: [`
-    `{`
-      `test: /\.(s*)css$/,`
-      `use: [`
-        `{ loader: MiniCssExtractPlugin.loader },`
-        `'css-loader',`
-        `'sass-loader',`
-      `],`
-    `}, `
-  `],`
-`},`
+`module: {`   
+  `rules: [`   
+    `{`   
+      `test: /\.(s*)css$/,`   
+      `use: [`   
+        `{ loader: MiniCssExtractPlugin.loader },`  
+        `'css-loader',`   
+        `'sass-loader',`  
+      `],`   
+    `}, `   
+  `],`   
+`},`   
 
-`// ...`
+`// ...`   
 
-`plugins: [`
-  `new MiniCssExtractPlugin({`
-    `filename: 'assets/[name].css',`
-  `}),`
-`],`
+`plugins: [`   
+  `new MiniCssExtractPlugin({`   
+    `filename: 'assets/[name].css',`   
+  `}),`   
+`],`   
 
 ## Configuración final: ESLint y Git Ignore
 El Git Ignore es un archivo que nos permite definir qué archivos NO queremos publicar en nuestros repositorios. Solo debemos crear el archivo .gitignore y escribir los nombres de los archivos y/o carpetas que no queremos publicar.
@@ -279,41 +279,41 @@ File Loader para acceder a las imágenes de nuestro proyecto desde el código.
 Inicialmente, estos archivos estáticos se encuentran junto al código de desarrollo. Pero al momento de compilar, Webpack guardará las imágenes en una nueva carpeta junto al código para producción y actualizará nuestros componentes (o donde sea que usemos las imágenes) con los nuevos nombres y rutas de los archivos.
 
 Instalación de File Loader:
-`npm install --save-dev file-loader`
+`npm install --save-dev file-loader`   
 
 Configuración de File Loader en Webpack (webpack.config.js):
-`rules: [`
-  `{`
-    `test: /\.(png|gif|jpg)$/,`
-    `use: [`
-      `{`
-        `loader: 'file-loader',`
-        `options: { name: 'assets/[hash].[ext]' },`
-      `}`
-    `],`
-  `},`
-`],`
+`rules: [`   
+  `{`   
+    `test: /\.(png|gif|jpg)$/,`   
+    `use: [`   
+      `{`   
+        `loader: 'file-loader',`   
+        `options: { name: 'assets/[hash].[ext]' },`   
+      `}`   
+    `],`   
+  `},`   
+`],`   
 
 Uso de File Loader con React:
-`import React from 'react';`
-`import nombreDeLaImagen from '../assets/static/nombre-del-archivo';`
+`import React from 'react';`   
+`import nombreDeLaImagen from '../assets/static/nombre-del-archivo';`   
 
-`const Component = () => (`
-  `<img src={nombreDeLaImagen} />`
-`);`
+`const Component = () => (`   
+  `<img src={nombreDeLaImagen} />`   
+`);`   
 
-`export default Component;`
+`export default Component;`   
 
 ## Creando una Fake API
 JSON Server para crear una Fake API: una API ““falsa”” construida a partir de un archivo JSON que nos permite preparar nuestro código para consumir una API de verdad en el futuro. En este caso el archivo es "initialState.json".
 
 Instalación de JSON Server:
-`sudo npm install json-server -g`
+`sudo npm install json-server -g`   
 
 Recuerda que en Windows debes correr tu terminal de comandos en modo administrador.
 
 Ejecutar el servidor de JSON Server:
-`json-server archivoParaTuAPI.json`
+`json-server archivoParaTuAPI.json`   
 
 ## React Hooks: useEffect y useState
 En esta clase el profesor Oscar Barajas nos enseña qué es y cómo implementar React Hooks: una característica de React disponible a partir de la versión 16.8 que nos permite agregar estado y ciclo de vida a nuestros componentes creados como funciones.
@@ -326,13 +326,13 @@ Los React Hooks son una característica de React que tenemos disponible a partir
 El Hook useState nos devuelve un array con dos elementos: la primera posición es el valor de nuestro estado, la segunda es una función que nos permite actualizar ese valor.
 
 El argumento que enviamos a esta función es el valor por defecto de nuestro estado (initial state).
-import React, { useState } from 'react';
+`import React, { useState } from 'react';`   
 
-`const Component = () => {`
-  `const [name, setName] = useState('Nombre por defecto');`
+`const Component = () => {`   
+  `const [name, setName] = useState('Nombre por defecto');`   
 
-  `return <div>{name}div>;`
-`}`
+  `return <div>{name}div>;`   
+`}`   
 
 El Hook useEffect nos permite ejecutar código cuando se monta, desmonta o actualiza nuestro componente.
 
@@ -341,20 +341,20 @@ El primer argumento que le enviamos a useEffect es una función que se ejecutar�
 El segundo argumento es un array donde podemos especificar qué propiedades deben cambiar para que React vuelva a llamar nuestro código. Si el componente actualiza pero estas props no cambian, la función no se ejecutará.
 
 Por defecto, cuando no enviamos un segundo argumento, React ejecutará la función de useEffect cada vez que el componente o sus componentes padres actualicen. En cambio, si enviamos un array vacío, esta función solo se ejecutará al montar o desmontar el componente.
-`import React, { useState, useEffect } from 'react';`
+`import React, { useState, useEffect } from 'react';`   
 
-`const Component = () => {`
-  `const [name, setName] = useState('Nombre por defecto');`
+`const Component = () => {`   
+  `const [name, setName] = useState('Nombre por defecto');`   
 
-  `useEffect(() => {`
-    `document.title = name;`
-    `return () => {`
-      `document.title = 'el componente se desmontó';`
-    `};`
-  `}, [name]);`
+  `useEffect(() => {`   
+    `document.title = name;`   
+    `return () => {`   
+      `document.title = 'el componente se desmontó';`   
+    `};`   
+  `}, [name]);`   
 
-  `return <div>{name}div>;`
-`}`
+  `return <div>{name}div>;`   
+`}`   
 
 No importar las funciones de los hooks desde la librería de React. También puedes usarlos de esta forma: React.useNombreDelHook.
 
@@ -369,37 +369,34 @@ React nos permite crear nuestros propios Hooks. Solo debemos seguir algunas conv
 Los PropTypes son una propiedad de nuestros componentes que nos permiten especificar qué tipo de elementos son nuestras props: arrays, strings, números, etc.
 
 Instalación de PropTypes:
-`npm install --save prop-types`
+`npm install --save prop-types`   
 
 Uso de PropTypes:
-`import React from 'react';`
-`import PropTypes from 'prop-types';`
+`import React from 'react';`   
+`import PropTypes from 'prop-types';`   
 
-`const Component = ({ name, lastName, age, list }) => {`
-  `// ...`
-`};`
+`const Component = ({ name, lastName, age, list }) => {`   
+  `// ...`   
+`};`   
 
-`Component.propTypes = {`
-  `name: PropTypes.string,`
-  `lastName: PropTypes.string,`
-  `age: PropTypes.number,`
-  `list: PropTypes.array,`
-`};`
+`Component.propTypes = {`    
+  `name: PropTypes.string,`   
+  `lastName: PropTypes.string,`   
+  `age: PropTypes.number,`   
+  `list: PropTypes.array,`   
+`};`   
 
-`export default Component;`
+`export default Component;`   
 
 Por defecto, enviar todas nuestras props es opcional, pero con los propTypes podemos especificar cuáles props son obligatorias para que nuestro componente funcione correctamente con el atributo isRequired.
-`Component.propTypes = {`
-  `name: PropTypes.string.isRequired, // obligatorio`
-  `lastName: PropTypes.string.isRequired, // obligatorio`
-  `age: PropTypes.number, // opcional,`
-  `list: PropTypes.array, // opcional`
-`};`
+`Component.propTypes = {`   
+  `name: PropTypes.string.isRequired, // obligatorio`   
+  `lastName: PropTypes.string.isRequired, // obligatorio`   
+  `age: PropTypes.number, // opcional,`   
+  `list: PropTypes.array, // opcional`   
+`};`   
 
 Mas información: https://es.reactjs.org/docs/typechecking-with-proptypes.html
-
-
-
 
 ## Documentacion Ciclo de visa
 https://es.reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class
